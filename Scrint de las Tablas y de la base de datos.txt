@@ -1,0 +1,59 @@
+<<<<<<<<<<<Base de datos >>>>>>>>
+
+-- Database: examenIIICuatriKendall
+
+-- DROP DATABASE "examenIIICuatriKendall";
+
+CREATE DATABASE "examenIIICuatriKendall"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Costa Rica.1252'
+    LC_CTYPE = 'Spanish_Costa Rica.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+<<<<<<<<<< Tabla de compras >>>>>>>>>
+
+-- Table: public.compras
+
+-- DROP TABLE public.compras;
+
+CREATE TABLE public.compras
+(
+    nombre_usuario character varying COLLATE pg_catalog."default" NOT NULL,
+    edad integer,
+    sexo character varying COLLATE pg_catalog."default",
+    id_producto integer,
+    fecha_compra date,
+    CONSTRAINT compras_pkey PRIMARY KEY (nombre_usuario)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.compras
+    OWNER to postgres;
+
+<<<<<<<<<< Tablas de Productos >>>>>>>>>>>>>>
+
+-- Table: public.productos
+
+-- DROP TABLE public.productos;
+
+CREATE TABLE public.productos
+(
+    id_producto integer NOT NULL,
+    nombre_producto character varying COLLATE pg_catalog."default",
+    precio_producto numeric,
+    tipo character varying COLLATE pg_catalog."default",
+    CONSTRAINT productos_pkey PRIMARY KEY (id_producto)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.productos
+    OWNER to postgres;
